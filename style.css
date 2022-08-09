@@ -1,0 +1,243 @@
+:root {
+    --clr-blue: #374151;
+    --clr-dark-blue: #111827;
+    --clr-grey: #9CA3AF;
+    --clr-dark-grey: #6B7280;
+    --clr-light: #F9FAFB;
+    --clr-text: #DFDDDD;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+    margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+    padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* A elements that don't have a class get default styles */
+a {
+    text-decoration-skip-ink: auto;
+    text-decoration: none;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--clr-text);
+}
+
+.container {
+    width: min(90%, 900px);
+    margin-inline: auto;
+}
+
+.primary-header {
+    color: #fff;
+    min-height: 30vh;
+    position: relative;
+    background-image: url('https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+    isolation: isolate;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+form {
+    position: absolute;
+    bottom: -20px;
+    display: flex;
+}
+
+input {
+    background-image: url('icon-search.svg');
+    background-repeat: no-repeat;
+    border: 1px solid var(--clr-grey);
+    padding: 0.5em 6em 0.5em 3em;
+    background-size: 5%;
+    background-position: 15px 10px;
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+}
+
+.submit-btn {
+    cursor: pointer;
+    background-color: var(--clr-light);
+    border: 1px solid var(--clr-grey);
+    border-bottom-right-radius: 6px;
+    border-top-right-radius: 6px;
+    padding: 0.5em 2.8em;
+}
+
+.primary-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(0deg,
+            rgb(0 0 0 / .5),
+            rgb(0 0 0 / .5));
+}
+
+
+h1 {
+    font-weight: 900;
+    font-size: 3.5rem;
+}
+
+.header-link {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.3rem;
+    border-bottom: 3px solid transparent;
+}
+
+.header-link:hover {
+    border-color: #fff;
+}
+
+h2 {
+    color: var(--clr-text);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    padding: 4em 0;
+    background-color: #fff;
+}
+
+main .content,
+.watchlist-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.movie {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5em 0;
+    border-bottom: 2px solid var(--clr-text);
+}
+
+.movie-img {
+    border-radius: 3px;
+    max-width: 148px;
+}
+
+.movie-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.movie-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.movie-title {
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.movie-info {
+    display: flex;
+    gap: 1rem;
+    font-size: 15px;
+}
+
+.movie-overview {
+    max-width: 45ch;
+
+    color: var(--clr-dark-grey);
+}
+
+.watchlist-btn,
+.unwatchlist-btn {
+    cursor: pointer;
+    background-color: #fff;
+    display: flex;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.watchlist-btn img,
+.unwatchlist-btn img,
+.add-movies-btn img {
+    max-width: 20px;
+}
+
+/* watchlist */
+
+.add-movies-btn {
+    display: flex;
+    gap: 0.5rem;
+    color: #000;
+    font-weight: 700;
+    border-bottom: 2px solid transparent;
+}
+
+.add-movies-btn:hover {
+    border-color: #000;
+}
+
+button:hover {
+    border-color: #000;
+}
