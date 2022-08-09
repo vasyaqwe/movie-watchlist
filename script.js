@@ -15,34 +15,6 @@ if (!localStorage.getItem('moviesArr')) {
 }
 const moviesArr = JSON.parse(localStorage.getItem('moviesArr'))
 
-
-///append movies html to watclist page///
-if (localStorage.getItem('moviesArr')) {
-    const data = JSON.parse(localStorage.getItem('moviesArr'));
-
-    if (data.length > 0) {
-        watchlistContent.style.display = 'none';
-    }
-
-    for (let i = 0; i < data.length; i++) {
-        const targetMovie = data[i]
-        const poster = targetMovie.poster
-        const genresArr = targetMovie.genres
-        appendMoviesHtml(targetMovie, genresArr, poster, movieWatchlist, 'unwatchlist')
-
-        ///add listener on remove from watclist button///
-        const unWatchlistBtns = document.querySelectorAll('.unwatchlist-btn')
-        unWatchlistBtns[i].addEventListener('click', (e) => {
-            const arr = JSON.parse(localStorage.getItem('moviesArr'))
-            const moviesArr = arr.filter(item => arr[i] !== item)
-
-            localStorage.removeItem('moviesArr');
-            localStorage.setItem("moviesArr", JSON.stringify(moviesArr))
-            location.reload()
-        })
-    }
-}
-
 ///listen to form submit, if there is one=///
 if (form) {
     form.addEventListener('submit', async (e) => {
@@ -99,4 +71,31 @@ if (form) {
             }
         }
     })
+}
+
+///append movies html to watclist page///
+if (localStorage.getItem('moviesArr')) {
+    const data = JSON.parse(localStorage.getItem('moviesArr'));
+
+    if (data.length > 0) {
+        watchlistContent.style.display = 'none';
+    }
+
+    for (let i = 0; i < data.length; i++) {
+        const targetMovie = data[i]
+        const poster = targetMovie.poster
+        const genresArr = targetMovie.genres
+        appendMoviesHtml(targetMovie, genresArr, poster, movieWatchlist, 'unwatchlist')
+
+        ///add listener on remove from watclist button///
+        const unWatchlistBtns = document.querySelectorAll('.unwatchlist-btn')
+        unWatchlistBtns[i].addEventListener('click', (e) => {
+            const arr = JSON.parse(localStorage.getItem('moviesArr'))
+            const moviesArr = arr.filter(item => arr[i] !== item)
+
+            localStorage.removeItem('moviesArr');
+            localStorage.setItem("moviesArr", JSON.stringify(moviesArr))
+            location.reload()
+        })
+    }
 }
