@@ -52,7 +52,7 @@ const appendMoviesHtml = (data, genresArr, poster, movieList, btnType) => {
                         <small class="movie-rating">${data.vote_average}</small>
                     </header>
                     <div class="movie-info">
-                        <span class="movie-runtime">120 min</span>
+                        <span class="movie-date">${data.release_date.substring(0, 4)}</span>
                         <span class="movie-genre">${genresArr}</span>
                         <button class="${btnType}-btn"><img src="icon-${btnType}.svg" alt="">${btnType === 'unwatchlist' ? 'Remove' : 'Add to watchlist'}</button>
                     </div>

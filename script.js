@@ -51,6 +51,7 @@ if (form) {
                             moviesArr.push({
                                 original_title: targetMovie.original_title,
                                 vote_average: targetMovie.vote_average,
+                                release_date: targetMovie.release_date,
                                 poster: poster,
                                 genres: genresArr,
                                 overview: targetMovie.overview
